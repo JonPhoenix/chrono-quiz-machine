@@ -40,8 +40,15 @@ body {
     padding: 10px;
     color: white;
     border-width: small;
+    font-size: medium;
 }
 
 .btn:hover {
     border-color: indigo;
+}
+
+.start-button, .next-button {
+    font-size: larger;
+    font-weight: bold;
+    padding: 10px 20px;
 }

@@ -48,7 +48,11 @@ body {
 }
 
 .start-button, .next-button {
-    font-size: larger;
+    font-size: x-large;
     font-weight: bold;
     padding: 10px 20px;
+}
+
+.hide {
+    display: none;
 }

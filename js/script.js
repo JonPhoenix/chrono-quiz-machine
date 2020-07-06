@@ -8,7 +8,6 @@ let answerButtonsElement = document.getElementById('answer-buttons');
 let shuffleQuestions, currentQuestion;
 
 // Function: start Quiz / shuffle questions
-
 startButton.addEventListener('click', startQuiz);
 
 function startQuiz() {
@@ -22,6 +21,7 @@ function startQuiz() {
 }
 // Go to next question
 function nextQuestion() {
+    resetState()
     showQuestion(shuffleQuestions[currentQuestion]);
 }
 
@@ -38,7 +38,11 @@ function showQuestion(question) {
         button.addEventListener('click', selectAnswer);
         answerButtonsElement.appendChild(button);
     });
-
+}
+function resetState() {
+    while (answerButtonsElement.firstChild) {
+        answerButtonsElement.removeChild (answerButtonsElement.firstChild);
+    }
 }
 
 // Function: Select answer
@@ -49,7 +53,7 @@ function selectAnswer() {
 // Answers true / false / modify timer
 let questionPool = [
     {
-        question: 'Q: String values must be enclosed within _________ when being assigned to variables.',
+        question: 'String values must be enclosed within _________ when being assigned to variables.',
         answers: [
             { text: '1. commas', correct: false },
             { text: '2. curly brackets', correct: true },
@@ -58,8 +62,6 @@ let questionPool = [
         ]
     }
 ]
-
-
 
 // Set the timer
 

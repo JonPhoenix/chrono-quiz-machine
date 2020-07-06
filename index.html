@@ -10,7 +10,13 @@
 <body>
     <div class="card-container">
         <div id="question-device">
-            <div id="question">Question</div>
+            <!-- Adding the countdown timer -->
+            <div id="quiz-timer" class="timer-style">
+                <h1>Timer</h1>
+            </div>
+            <div id="question" class="question-style">
+                <h2>Question</h2>
+            </div>
             <div id="answer-buttons" class="button-grid">
                 <button class="btn">Answer 1</button>
                 <button class="btn">Answer 2</button>
@@ -22,9 +28,7 @@
         <div>
             <button id="start-button" class="start-button btn">Start</button>
             <button id="next-button" class="start-button btn">Next</button>
-
         </div>
-
     </div>
 
     <!-- Linking JavaScript file -->

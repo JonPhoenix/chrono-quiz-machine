@@ -46,14 +46,29 @@ function resetState() {
 }
 
 // Function: Select answer
-function selectAnswer() {
+function selectAnswer(e) {
+    let selectButton = e.target;
+    let correct = selectButton.dataset.correct;
+    setStatus(document.correct)
+    Array.from(answerButtonsElement.children).forEach(button => {
+        setStatus(button, button.dataset.correct)
+    });
+}
 
+function setStatus(element, correct) {
+    clearStatus(element)
+    if (correct) {
+        element.classList.add('correct')
+    }
+    else {
+        element.classList.add('wrong')
+    }
 }
 
 // Answers true / false / modify timer
 let questionPool = [
     {
-        question: 'String values must be enclosed within _________ when being assigned to variables.',
+        question: 'Q: String values must be enclosed within _________ when being assigned to variables.',
         answers: [
             { text: '1. commas', correct: false },
             { text: '2. curly brackets', correct: true },

@@ -12,7 +12,7 @@ body {
     height: 100vh;
     justify-content: center;
     align-items: center;
-    background-color: cornflowerblue;
+    background-color: indigo;
 
 }
 
@@ -22,7 +22,7 @@ body {
     background-color: ivory;
     border-radius: 10px;
     box-shadow: 0 0 8px 1px;
-    padding: 25px;
+    padding: 30px;
     text-align: center;
 }
 
@@ -32,5 +32,16 @@ body {
     gap: 15px;
     margin-top: 20px;
     margin-bottom: 20px;
+}
 
+.btn {
+    background-color: slateblue;
+    border-radius: 8px;
+    padding: 10px;
+    color: white;
+    border-width: small;
+}
+
+.btn:hover {
+    border-color: indigo;
 }

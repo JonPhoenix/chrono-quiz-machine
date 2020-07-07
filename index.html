@@ -9,10 +9,21 @@
 </head>
 <body>
     <div class="card-container">
+        <div id='intro'>
+            <h1 id='header'>Chrono-Quiz</h1>
+            <p>
+                Try to answer the following code-related questions within the time 
+                limit. Keep in mind that incorrect answers will penalize your score 
+                time by ten seconds.
+            </p>
+        </div>
         <div id="question-device" class='hide'>
             <!-- Adding the countdown timer -->
-            <div id="quiz-timer" class="timer-style">
-                <h1>Timer</h1>
+            <p id="countdown" class="timer-style">Go!</p>
+
+            <div>
+                <h2 id="correct-sign" class="correct-sign hide">Correct!</h2>
+                <h2 id="incorrect-sign" class="incorrect-sign hide">Incorrect!</h2>
             </div>
             <div id="question" class="question-style">
                 <h2>Q: Question</h2>

@@ -22,6 +22,10 @@ body.incorrect {
     background-color: orangered;
 }
 
+#header {
+    color: indigo;
+}
+
 .card-container {
     width: 800px;
     max-width: 80%;
@@ -32,10 +36,24 @@ body.incorrect {
     text-align: center;
 }
 
-.timer-style {
-    text-align: left;
+.correct-sign {
+    text-align: right;
     font-weight: bold;
-    font-size: medium;
+    color: royalblue;
+}
+
+.incorrect-sign {
+    text-align: right;
+    font-weight: bold;
+    color: orangered;
+}
+
+.timer-style {
+    display: inline-flex;
+    font-weight: bold;
+    font-size: 40px;
+    height: 60px;
+    margin: 0;
     color: indigo;
 }
 

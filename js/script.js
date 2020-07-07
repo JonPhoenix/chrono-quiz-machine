@@ -2,6 +2,7 @@
 let startButton = document.getElementById('start-button');
 let introQuiz = document.getElementById('intro');
 let nextButton = document.getElementById('next-button');
+let finishButton = document.getElementById('finish-button');
 let correctSign = document.getElementById('correct-sign');
 let incorrectSign = document.getElementById('incorrect-sign');
 let questionDevice = document.getElementById('question-device');
@@ -16,6 +17,14 @@ nextButton.addEventListener('click', () => {
     currentQuestion++;
     nextQuestion();
 })
+finishButton.addEventListener('click', () => {
+    questionDevice.classList.add('hide'); 
+    scoreDevice.classList.remove('hide');
+    startButton.classList.add('hide');
+    finishButton.classList.add('hide');
+    document.body.classList.remove('correct', 'incorrect');
+})
+
 function startQuiz() {
     startButton.classList.add('hide');
     introQuiz.classList.add('hide');
@@ -41,6 +50,7 @@ function startQuiz() {
         questionDevice.classList.add('hide'); 
         scoreDevice.classList.remove('hide');
         startButton.classList.add('hide');
+        finishButton.classList.add('hide');
         document.body.classList.remove('correct', 'incorrect');
     }
 }
@@ -49,7 +59,7 @@ function nextQuestion() {
     resetState()
     showQuestion(shuffleQuestions[currentQuestion]);
 }
-// Function: Go to next question / shuffle questions
+// Function: Showing questions / shuffling questions
 function showQuestion(question) {
     questionElement.innerText = question.question
     question.answers.forEach(answer => {
@@ -76,7 +86,7 @@ function resetState() {
 function selectAnswer(e) {
     let selectButton = e.target;
     let correct = selectButton.dataset.correct;
-    setStatus(document.body, correct)
+    setStatus(document.body, correct);
     Array.from(answerButtonsElement.children).forEach(button => {
         setStatus(button, button.dataset.correct)
     });
@@ -84,8 +94,7 @@ function selectAnswer(e) {
         nextButton.classList.remove('hide');
     }
     else {
-        startButton.innerText = "Restart";
-        startButton.classList.remove('hide');
+        finishButton.classList.remove('hide');
     }
 }
 // Answers correct / incorrect / change buttons

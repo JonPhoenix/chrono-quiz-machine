@@ -2,19 +2,15 @@
 let startButton = document.getElementById('start-button');
 let introQuiz = document.getElementById('intro');
 let nextButton = document.getElementById('next-button');
-
 let correctSign = document.getElementById('correct-sign');
 let incorrectSign = document.getElementById('incorrect-sign');
-
 let questionDevice = document.getElementById('question-device');
 let scoreDevice = document.getElementById('score-device');
-
 let questionElement = document.getElementById('question');
 let answerButtonsElement = document.getElementById('answer-buttons');
-
 let shuffleQuestions, currentQuestion;
 
-// Function: start Quiz / shuffle questions
+// Function: start Quiz / shuffle questions / setting countdown timer
 startButton.addEventListener('click', startQuiz);
 nextButton.addEventListener('click', () => {
     currentQuestion++;
@@ -27,7 +23,7 @@ function startQuiz() {
     shuffleQuestions = questionPool.sort(() => Math.random() - .5)
     currentQuestion = 0
     nextQuestion()
-
+    // Setting timer / 60 seconds countdown
     let startingMinutes = 1;
     let time = startingMinutes * 60;
     let countdownEl = document.getElementById('countdown');
@@ -35,12 +31,11 @@ function startQuiz() {
     function updateCountdown() {
         let minutes = Math.floor(time / 60);
         let seconds = time % 60;
-
         seconds = seconds < 10 ? '0' + seconds : seconds
-
         countdownEl.innerHTML = `${minutes}:${seconds}`;
         time--;
     }
+    // Using setTimeout to end quiz / final score /  enter initials
     setTimeout (showScore, 60000)
     function showScore() {
         questionDevice.classList.add('hide'); 
@@ -71,13 +66,11 @@ function showQuestion(question) {
 function resetState() {
     clearStatus(document.body);
     nextButton.classList.add('hide');
-    correctSign.classList.add('hide');
-    // incorrectSign.classList.add('hide');
     while (answerButtonsElement.firstChild) {
         answerButtonsElement.removeChild (answerButtonsElement.firstChild);
     }
 }
-// Function: Select answer
+// Function: Select answer / showing correct / incorrect
 function selectAnswer(e) {
     let selectButton = e.target;
     let correct = selectButton.dataset.correct;
@@ -98,12 +91,9 @@ function setStatus(element, correct) {
     clearStatus(element)
     if (correct) {
         element.classList.add('correct'); 
-        correctSign.classList.remove('hide');
     }
     else {
         element.classList.add('incorrect');
-        correctSign.classList.add('hide');
-        //incorrectSign.classList.remove('hide');
     }
 }
 // Function: Reset answer buttons for the next question
@@ -115,12 +105,5 @@ function clearStatus(element) {
 let script = document.createElement('script');
 script.src = 'js/questions.js';
 document.head.appendChild(script)
-// Set the countdown / timer
-
-
-
-
-// Function: Show final score /  enter initials
-
 
 // show high scores / clear high scores and restart quiz

@@ -18,7 +18,7 @@ body.correct {
     background-color: royalblue;
 }
 
-body.wrong {
+body.incorrect {
     background-color: orangered;
 }
 
@@ -70,14 +70,18 @@ body.wrong {
     background-color: royalblue;
 }
 
-.btn.wrong {
+.btn.incorrect {
     background-color: orangered;
 }
 
 .start-button {
-    font-size: 40px;
+    font-size: large;
     font-weight: bold;
     padding: 10px 20px;
+}
+
+.next-button {
+    background-color: slateblue;
 }
 
 .hide {

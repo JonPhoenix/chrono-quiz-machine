@@ -1,14 +1,21 @@
 // Variables declaration
-let startButton =  document.getElementById('start-button');
+let startButton = document.getElementById('start-button');
+let nextButton = document.getElementById('next-button');
+
 let questionDevice = document.getElementById('question-device');
 
-let questionElement =  document.getElementById('question');
+let questionElement = document.getElementById('question');
 let answerButtonsElement = document.getElementById('answer-buttons');
 
 let shuffleQuestions, currentQuestion;
 
 // Function: start Quiz / shuffle questions
 startButton.addEventListener('click', startQuiz);
+
+nextButton.addEventListener('click', () => {
+    currentQuestion++;
+    nextQuestion();
+})
 
 function startQuiz() {
     startButton.classList.add('hide');
@@ -40,6 +47,7 @@ function showQuestion(question) {
     });
 }
 function resetState() {
+
     while (answerButtonsElement.firstChild) {
         answerButtonsElement.removeChild (answerButtonsElement.firstChild);
     }
@@ -49,20 +57,36 @@ function resetState() {
 function selectAnswer(e) {
     let selectButton = e.target;
     let correct = selectButton.dataset.correct;
-    setStatus(document.correct)
+    setStatus(document.body, correct)
     Array.from(answerButtonsElement.children).forEach(button => {
         setStatus(button, button.dataset.correct)
     });
+    if (shuffleQuestions.length > currentQuestion +1) {
+        nextButton.classList.remove('hide');
+    }
+    else {
+        startButton.innerText = "Restart";
+        startButton.classList.remove('hide');
+    }
+
+
 }
 
 function setStatus(element, correct) {
     clearStatus(element)
     if (correct) {
-        element.classList.add('correct')
+        element.classList.add('correct');
     }
     else {
-        element.classList.add('wrong')
+        element.classList.add('incorrect');
     }
+}
+
+
+
+function clearStatus(element) {
+    element.classList.remove('correct')
+    element.classList.remove('incorrect')
 }
 
 // Answers true / false / modify timer
@@ -75,8 +99,19 @@ let questionPool = [
             { text: '3. quotes',  correct: false },
             { text: '4. parentheses', correct: false},
         ]
+    },
+    {
+        question: 'Q: String values must be enclosed within?',
+        answers: [
+            { text: '1. commas', correct: false },
+            { text: '2. curly brackets', correct: false },
+            { text: '3. quotes',  correct: true },
+            { text: '4. parentheses', correct: false},
+        ]
     }
 ]
+
+
 
 // Set the timer
 

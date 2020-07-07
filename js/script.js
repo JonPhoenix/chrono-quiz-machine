@@ -40,6 +40,8 @@ function startQuiz() {
     function showScore() {
         questionDevice.classList.add('hide'); 
         scoreDevice.classList.remove('hide');
+        startButton.classList.add('hide');
+        document.body.classList.remove('correct', 'incorrect');
     }
 }
 // Function: Go to next question / shuffle questions

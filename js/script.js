@@ -47,7 +47,8 @@ function showQuestion(question) {
     });
 }
 function resetState() {
-
+    clearStatus(document.body);
+    nextButton.classList.add('hide');
     while (answerButtonsElement.firstChild) {
         answerButtonsElement.removeChild (answerButtonsElement.firstChild);
     }
@@ -92,21 +93,30 @@ function clearStatus(element) {
 // Answers true / false / modify timer
 let questionPool = [
     {
-        question: 'Q: String values must be enclosed within _________ when being assigned to variables.',
-        answers: [
-            { text: '1. commas', correct: false },
-            { text: '2. curly brackets', correct: true },
-            { text: '3. quotes',  correct: false },
-            { text: '4. parentheses', correct: false},
-        ]
-    },
-    {
-        question: 'Q: String values must be enclosed within?',
+        question: 'Q: String values must be enclosed within ______ when being assigned to variables.',
         answers: [
             { text: '1. commas', correct: false },
             { text: '2. curly brackets', correct: false },
             { text: '3. quotes',  correct: true },
             { text: '4. parentheses', correct: false},
+        ]
+    },
+    {
+        question: 'Q: Arrays in JavaScript can be used to store ______.',
+        answers: [
+            { text: '1. numbers and strings', correct: false },
+            { text: '2. other arrays', correct: false },
+            { text: '3. booleans',  correct: false },
+            { text: '4. all of the above', correct: true},
+        ]
+    },
+    {
+        question: 'Q: The condition in ab if / else statement is enclosed within ______.',
+        answers: [
+            { text: '1. quotes', correct: false },
+            { text: '2. curly brackets', correct: false },
+            { text: '3. parentheses',  correct: true },
+            { text: '4. square brackets', correct: false},
         ]
     }
 ]

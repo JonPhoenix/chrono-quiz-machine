@@ -14,11 +14,12 @@ body {
     background-color: indigo;
 }
 
-header {
-    padding: 20px;
-    text-align: center;
-    font-size: smaller;
-    color: ivory;
+body.correct {
+    background-color: royalblue;
+}
+
+body.wrong {
+    background-color: orangered;
 }
 
 .card-container {
@@ -34,7 +35,7 @@ header {
 .timer-style {
     text-align: left;
     font-weight: bold;
-    font-size: x-large;
+    font-size: medium;
     color: indigo;
 }
 
@@ -63,6 +64,14 @@ header {
 
 .btn:hover {
     border-color: indigo;
+}
+
+.btn.correct {
+    background-color: royalblue;
+}
+
+.btn.wrong {
+    background-color: orangered;
 }
 
 .start-button {

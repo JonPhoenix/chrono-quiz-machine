@@ -43,6 +43,15 @@ function startQuiz() {
         seconds = seconds < 10 ? '0' + seconds : seconds
         countdownEl.innerHTML = `${minutes}:${seconds}`;
         time--;
+
+        // if (setStatus) {
+        //     countdownEl.innerHTML = `${minutes}:${seconds}`;
+        //     time--;
+        // }
+        // else {
+        //     countdownEl.innerHTML = `${minutes}:${seconds}`;
+        //     time-10;
+        // }
     }
     // Using setTimeout to end quiz / final score /  enter initials
     setTimeout (showScore, 60000)
@@ -54,6 +63,7 @@ function startQuiz() {
         document.body.classList.remove('correct', 'incorrect');
     }
 }
+
 // Function: Go to next question / shuffle questions
 function nextQuestion() {
     resetState()
@@ -100,6 +110,7 @@ function selectAnswer(e) {
 // Answers correct / incorrect / change buttons
 function setStatus(element, correct) {
     clearStatus(element)
+
     if (correct) {
         element.classList.add('correct'); 
     }

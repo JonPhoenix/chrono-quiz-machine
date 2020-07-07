@@ -21,10 +21,6 @@
             <!-- Adding the countdown timer -->
             <p id="countdown" class="timer-style">Go!</p>
 
-            <div>
-                <h2 id="correct-sign" class="correct-sign hide">Correct!</h2>
-                <h2 id="incorrect-sign" class="incorrect-sign hide">Incorrect!</h2>
-            </div>
             <div id="question" class="question-style">
                 <h2>Q: Question</h2>
             </div>
@@ -34,7 +30,22 @@
                 <button class="btn">Answer 3</button>
                 <button class="btn">Answer 4</button>
             </div>
-
+            <div>
+                <h2 id="correct-sign" class="correct-sign">Correct!</h2>
+                <h2 id="incorrect-sign" class="incorrect-sign hide">Incorrect!</h2>
+            </div>
+        </div>
+        <div id="score-device" class= "hide">
+            <h1 id=header>All Done!</h1>
+            <text>Your final score is: </text><text>0</text>
+            <br/>
+            <br/>
+            <form action="/action_page.php">
+                <label for="fname">Enter Your Initials </label>
+                <input type="text" id="fname" name="firstname" placeholder="Here">
+                <br/>
+                <input type="submit" value="Submit">
+            </form>
         </div>
         <div>
             <button id="start-button" class="start-button btn">Start Quiz</button>

@@ -37,13 +37,13 @@ body.incorrect {
 }
 
 .correct-sign {
-    text-align: right;
+    display: inline-flex;
     font-weight: bold;
     color: royalblue;
 }
 
 .incorrect-sign {
-    text-align: right;
+    display: inline-flex;
     font-weight: bold;
     color: orangered;
 }
@@ -57,7 +57,7 @@ body.incorrect {
     color: indigo;
 }
 
-.question-style {
+.question-style, text, label {
     color: slategrey;
     font-size: 18px;
     text-align: left;
@@ -74,14 +74,12 @@ body.incorrect {
 .btn {
     background-color: slateblue;
     border-radius: 8px;
+    border: none;
     padding: 10px;
     color: white;
     border-width: small;
     font-size: large;
-}
-
-.btn:hover {
-    border-color: indigo;
+    cursor: pointer;
 }
 
 .btn.correct {
@@ -93,7 +91,6 @@ body.incorrect {
 }
 
 .start-button {
-    font-size: large;
     font-weight: bold;
     padding: 10px 20px;
 }
@@ -105,3 +102,25 @@ body.incorrect {
 .hide {
     display: none;
 }
+
+input[type=text] {
+    padding: 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    background-color: slateblue;
+    color: white;
+    font-size: large;
+    font-weight: bold;
+    padding: 10px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+  

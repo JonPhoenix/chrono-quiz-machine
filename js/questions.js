@@ -18,7 +18,7 @@ let questionPool = [
         ]
     },
     {
-        question: 'Q: The condition in ab if / else statement is enclosed within ______.',
+        question: 'Q: The condition in an if / else statement is enclosed within ______.',
         answers: [
             { text: '1. quotes', correct: false },
             { text: '2. curly brackets', correct: false },

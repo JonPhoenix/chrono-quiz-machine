@@ -31,8 +31,8 @@
                 <button class="btn">Answer 4</button>
             </div>
             <div>
-                <h2 id="correct-message" class="correct-message hide">Correct!</h2>
-                <h2 id="incorrect-message" class="incorrect-message hide">Incorrect!</h2>
+                <h2 id="correct-message" class="message hide">Correct!</h2>
+                <h2 id="incorrect-message" class="message hide">Incorrect!</h2>
             </div>
         </div>
         <div id="score-device" class= "hide">
@@ -41,11 +41,15 @@
             <br/>
             <br/>
             <form action="/action_page.php">
-                <label for="fname">Enter Your Initials </label>
-                <input type="text" id="fname" name="firstname" placeholder="Here">
+                <label for="initials">Enter Your Initials </label>
+                <input type="text" id="initials" placeholder="Here">
                 <br/>
                 <input type="submit" value="Submit">
             </form>
+        </div>
+        <div id="high-scores" class="hide">
+            <h2>High Scores</h2>
+            <p><strong>1. </strong> <span id="registered-score"></span></p>
         </div>
         <div>
             <button id="start-button" class="start-button btn">Start Quiz</button>

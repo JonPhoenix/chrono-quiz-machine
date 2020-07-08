@@ -3,10 +3,11 @@ let startButton = document.getElementById('start-button');
 let introQuiz = document.getElementById('intro');
 let nextButton = document.getElementById('next-button');
 let finishButton = document.getElementById('finish-button');
-// let correctMessage = document.getElementById('correct-message');
-// let incorrectMessage = document.getElementById('incorrect-message');
+let correctMessage = document.getElementById('correct-message');
+let incorrectMessage = document.getElementById('incorrect-message');
 let questionDevice = document.getElementById('question-device');
 let scoreDevice = document.getElementById('score-device');
+let highScores = document.getElementById('high-scores');
 let questionElement = document.getElementById('question');
 let answerButtonsElement = document.getElementById('answer-buttons');
 let shuffleQuestions, currentQuestion;
@@ -44,14 +45,6 @@ function startQuiz() {
         countdownEl.innerHTML = `${minutes}:${seconds}`;
         time--;
 
-        // if (setStatus) {
-        //     countdownEl.innerHTML = `${minutes}:${seconds}`;
-        //     time--;
-        // }
-        // else {
-        //     countdownEl.innerHTML = `${minutes}:${seconds}`;
-        //     time-10;
-        // }
     }
     // Using setTimeout to end quiz / final score /  enter initials
     setTimeout (showScore, 60000)
@@ -89,7 +82,8 @@ function resetState() {
     clearStatus(document.body);
     nextButton.classList.add('hide');
     while (answerButtonsElement.firstChild) {
-        answerButtonsElement.removeChild (answerButtonsElement.firstChild);
+        answerButtonsElement.removeChild 
+        (answerButtonsElement.firstChild);
     }
 }
 // Function: Select answer / showing correct / incorrect
@@ -106,22 +100,28 @@ function selectAnswer(e) {
     else {
         finishButton.classList.remove('hide');
     }
-}
-// Answers correct / incorrect / change buttons
-function setStatus(element, correct) {
-    clearStatus(element)
 
-    if (correct) {
-        element.classList.add('correct'); 
-    }
-    else {
-        element.classList.add('incorrect');
+    function setStatus(element, correct) {
+        // clearStatus(element)
+        if (correct) {
+            element.classList.add('correct');
+            // correctMessage.classList.add('correct');
+        }
+        else {
+            element.classList.add('incorrect');
+            // incorrectMessage.classList.add('incorrect');
+        }
     }
 }
+
+// Answers correct / incorrect / change buttons
+
 // Function: Reset answer buttons for the next question
 function clearStatus(element) {
     element.classList.remove('correct')
     element.classList.remove('incorrect')
+    // correctMessage.classList.add('hide');
+    // incorrectMessage.classList.add('hide');
 }
 // let questionPool on questions.js file
 let script = document.createElement('script');

@@ -36,13 +36,13 @@ body.incorrect {
     text-align: center;
 }
 
-.correct-sign {
+.message.correct {
     display: inline-flex;
     font-weight: bold;
     color: royalblue;
 }
 
-.incorrect-sign {
+.message.incorrect {
     display: inline-flex;
     font-weight: bold;
     color: orangered;

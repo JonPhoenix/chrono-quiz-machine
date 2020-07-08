@@ -25,6 +25,7 @@ finishButton.addEventListener('click', () => {
     startButton.classList.add('hide');
     finishButton.classList.add('hide');
     document.body.classList.remove('correct', 'incorrect');
+
 })
 
 function startQuiz() {

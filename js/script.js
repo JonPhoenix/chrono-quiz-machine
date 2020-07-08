@@ -126,7 +126,7 @@ document.head.appendChild(script)
 
 // show high scores / clear high scores and restart quiz
 function renderLastRegistered() {
-    let name = localStorage.getItem("initials");
+    let name = localStorage.getItem("registered-score");
   
     if (!name) {
       return;
@@ -140,7 +140,7 @@ submitButton.addEventListener("click", function(event) {
     highScores.classList.remove('hide');
     scoreDevice.classList.add('hide');
 
-    let initials = document.querySelector('registered-score').value;
+    let initials = document.querySelector('initials').value;
   
     if (initials === "") {
       displayMessage("error", "Please enter initials");

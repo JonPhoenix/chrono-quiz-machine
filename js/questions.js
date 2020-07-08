@@ -27,12 +27,21 @@ let questionPool = [
         ]
     },
     {
-        question: 'Q: Is it true or false ______?',
+        question: 'Q: Commonly used data types do not include ______.',
         answers: [
-            { text: '1. it is true', correct: true },
-            { text: '2. super false', correct: false },
-            { text: '3. totally false',  correct: false },
-            { text: '4. very false', correct: false },
+            { text: '1. strings', correct: false },
+            { text: '2. booleans', correct: false },
+            { text: '3. alerts',  correct: true },
+            { text: '4. numbers', correct: false },
+        ]
+    },
+    {
+        question: 'Q: A useful tool for development and debugging for printing content to the debugger is:',
+        answers: [
+            { text: '1. javascript', correct: false },
+            { text: '2. terminal/bash', correct: false },
+            { text: '3. for loops',  correct: false },
+            { text: '4. console.log', correct: true },
         ]
     },
 ]

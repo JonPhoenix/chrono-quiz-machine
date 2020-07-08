@@ -26,6 +26,10 @@ body.incorrect {
     color: indigo;
 }
 
+p {
+    color: slategray;
+}
+
 .card-container {
     width: 800px;
     max-width: 80%;

@@ -4,10 +4,11 @@ let introQuiz = document.getElementById('intro');
 let nextButton = document.getElementById('next-button');
 let finishButton = document.getElementById('finish-button');
 let correctMessage = document.getElementById('correct-message');
-let incorrectMessage = document.getElementById('incorrect-message');
+let incorrectMessage = document.getElementById('#incorrect-message');
 let questionDevice = document.getElementById('question-device');
 let scoreDevice = document.getElementById('score-device');
 let highScores = document.getElementById('high-scores');
+let submitButton = document.getElementById('submit-button');
 let questionElement = document.getElementById('question');
 let answerButtonsElement = document.getElementById('answer-buttons');
 let shuffleQuestions, currentQuestion;
@@ -28,8 +29,10 @@ finishButton.addEventListener('click', () => {
 
 function startQuiz() {
     startButton.classList.add('hide');
+    highScores.classList.add('hide');
     introQuiz.classList.add('hide');
     questionDevice.classList.remove('hide');
+    
     shuffleQuestions = questionPool.sort(() => Math.random() - .5)
     currentQuestion = 0
     nextQuestion()
@@ -105,23 +108,16 @@ function selectAnswer(e) {
         // clearStatus(element)
         if (correct) {
             element.classList.add('correct');
-            // correctMessage.classList.add('correct');
         }
         else {
             element.classList.add('incorrect');
-            // incorrectMessage.classList.add('incorrect');
         }
     }
 }
-
-// Answers correct / incorrect / change buttons
-
 // Function: Reset answer buttons for the next question
 function clearStatus(element) {
     element.classList.remove('correct')
     element.classList.remove('incorrect')
-    // correctMessage.classList.add('hide');
-    // incorrectMessage.classList.add('hide');
 }
 // let questionPool on questions.js file
 let script = document.createElement('script');
@@ -129,3 +125,29 @@ script.src = 'js/questions.js';
 document.head.appendChild(script)
 
 // show high scores / clear high scores and restart quiz
+function renderLastRegistered() {
+    let name = localStorage.getItem("initials");
+  
+    if (!name) {
+      return;
+    }
+  
+    userNameSpan.textContent = name;
+  }
+
+submitButton.addEventListener("click", function(event) {
+    event.preventDefault(); 
+    highScores.classList.remove('hide');
+    scoreDevice.classList.add('hide');
+
+    let initials = document.querySelector('registered-score').value;
+  
+    if (initials === "") {
+      displayMessage("error", "Please enter initials");
+    } else {
+      displayMessage("Initials submitted");
+  
+      localStorage.setItem("initials", name);
+      renderLastRegistered();
+    }
+  });
